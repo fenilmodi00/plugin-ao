@@ -1,2 +1,2 @@
 export { AOService } from './AOService';
-export{ starterPlugin } from './starterPlugin';
+export { aoPlugin } from '../plugin';

@@ -20,7 +20,7 @@ import type { AOServiceConfig, AOResult } from '../types';
  * Handles spawning processes, sending messages, and reading results
  */
 export class AOService extends Service {
-  static override serviceType = 'ao';
+  static serviceType = 'ao';
   
   private signer: ReturnType<typeof createSigner> | undefined = undefined;
   private initialized = false;
@@ -29,6 +29,15 @@ export class AOService extends Service {
   constructor(runtime: IAgentRuntime, config: AOServiceConfig = {}) {
     super(runtime);
     this.config = config;
+  }
+
+  /**
+   * Static start method to create and initialize the service
+   */
+  static async start(runtime: IAgentRuntime): Promise<AOService> {
+    const service = new AOService(runtime);
+    await service.initialize(runtime);
+    return service;
   }
 
   /**
