@@ -1,0 +1,35 @@
+# Ignore environment files
+.env
+.env.*
+
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Bun
+bun.lock
+
+# Build output
+dist/
+build/
+
+# Test coverage
+coverage/
+
+# Misc
+*.tgz
+.idea/
+.vscode/
+
+# Ignore .clinerule if needed
+.clinerule/
